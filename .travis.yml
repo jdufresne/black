@@ -4,10 +4,9 @@ cache:
   directories:
     - $HOME/.cache/pre-commit
 env:
-  - TEST_CMD="coverage run tests/test_black.py"
+  - TEST_CMD="tox -e py"
 install:
-  - pip install coverage coveralls pre-commit
-  - pip install -e '.[d]'
+  - pip install coverage coveralls pre-commit tox
 script:
   - $TEST_CMD
 after_success:
